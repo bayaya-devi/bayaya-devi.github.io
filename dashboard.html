@@ -158,7 +158,7 @@
                 const sessionStr = localStorage.getItem('quran_session');
                 if (sessionStr) session = JSON.parse(sessionStr);
             } catch(e) { }
-            
+            console.log(localStorage.getItem('quran_session'));
             if (!session) return;
             
             document.getElementById('student-name').innerText = session.prenom || "الطالب";
