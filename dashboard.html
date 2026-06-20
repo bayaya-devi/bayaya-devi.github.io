@@ -159,7 +159,12 @@
                 if (sessionStr) session = JSON.parse(sessionStr);
             } catch(e) { }
             console.log(localStorage.getItem('quran_session'));
-            if (!session) return;
+            if (!session) {
+    session = {
+        username: "",
+        prenom: "الطالب"
+    };
+}
             
             document.getElementById('student-name').innerText = session.prenom || "الطالب";
 
