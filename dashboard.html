@@ -208,8 +208,11 @@
                     progressData = Auth.getProgress(session.username) || {}; 
                 }
             } catch(e) {}
-            
+            console.log("SURAH_REGISTRY =", SURAH_REGISTRY);
+            console.log("Nombre total :", SURAH_REGISTRY.length);
             const available = SURAH_REGISTRY.filter(s => s.available === true);
+            console.log("Disponibles :", available);
+             console.log("Bloquées :", locked);
             const locked = SURAH_REGISTRY.filter(s => s.available === false);
             
             // 6. Calcul Barre de progression
