@@ -290,10 +290,15 @@ const Auth = (() => {
     save(SCHEDULE_KEY, schedules);
   }
 
-  function getSchedule(username) {
-    const schedules = load(SCHEDULE_KEY);
-    return schedules[username] || "لم يتم تحديد أوقات الحصص بعد.";
-  }
+  async function getSchedule(username) {
+    const { data, error } = await supabase
+        .from('horaires')
+        .select('schedule_text')
+        .eq('username', username)
+        .single();
+
+    return data.schedule_text;
+}
 
   // ─────────────────────────────────────────────────────────
   //  PROFILS ADMINISTRATIFS
