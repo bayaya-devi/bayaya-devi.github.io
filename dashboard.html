@@ -216,9 +216,10 @@
             console.log("SURAH_REGISTRY =", SURAH_REGISTRY);
             console.log("Nombre total :", SURAH_REGISTRY.length);
             const available = SURAH_REGISTRY.filter(s => s.available === true);
-            console.log("Disponibles :", available);
-             console.log("Bloquées :", locked);
-            const locked = SURAH_REGISTRY.filter(s => s.available === false);
+const locked = SURAH_REGISTRY.filter(s => s.available === false);
+
+console.log("Disponibles :", available);
+console.log("Bloquées :", locked);
             
             // 6. Calcul Barre de progression
             let completedCount = 0;
