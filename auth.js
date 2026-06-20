@@ -295,7 +295,7 @@ const Auth = (() => {
         .from('horaires')
         .select('schedule_text')
         .eq('username', username)
-        .single();
+        .maybeSingle()
 
     return data.schedule_text;
 }
